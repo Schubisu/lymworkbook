@@ -90,6 +90,12 @@ Vagrant.configure("2") do |config|
    git clone https://github.com/kushaldas/lymworkbook.git
    cd lymworkbook; sudo python2 setup.py install
 
+   git clone https://github.com/magicmonty/bash-git-prompt.git /home/vagrant/.bash-git-prompt --depth=1
+   echo "if [ -f "/home/vagrant/.bash-git-prompt/gitprompt.sh" ]; then
+   GIT_PROMPT_ONLY_IN_REPO=1
+   source /home/vagrant/.bash-git-prompt/gitprompt.sh
+fi" | tee -a /home/vagrant/.bashrc
+
  SHELL
   end
 
